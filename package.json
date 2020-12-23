@@ -1,0 +1,59 @@
+{
+  "name": "stream-helper",
+  "version": "0.0.1",
+  "private": true,
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.marckraw.stream-helper",
+    "productName": "Stream Helper",
+    "files": [
+      "public/**/*",
+      "build/**/*",
+      "build/icon.*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "publish": [
+        "github"
+      ]
+    },
+    "mac": {
+      "hardenedRuntime": true
+    }
+  },
+  "homepage": "./",
+  "scripts": {
+    "next-dev": "next dev",
+    "next-build": "next build",
+    "next-start": "next start",
+    "electron-start": "electron .",
+    "electron-build": "electron-builder",
+    "build-locally": "yarn && yarn run next-build && yarn run electron-build",
+    "pack": "DEBUG=electron-builder electron-builder --dir",
+    "build": "yarn run next-build",
+    "release": "yarn run build",
+    "start": "concurrently \"cross-env BROWSER=none yarn run next-dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "classnames": "^2.2.6",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0",
+    "electron-store": "^6.0.1",
+    "next": "^10.0.3",
+    "obs-websocket-js": "^4.0.2",
+    "postcss": "^8.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-tooltip": "^4.2.11",
+    "sass": "^1.30.0",
+    "tailwindcss": "^2.0.2",
+    "wait-on": "^5.2.0"
+  },
+  "devDependencies": {
+    "electron": "^11.1.0",
+    "electron-builder": "^22.9.1"
+  }
+}
