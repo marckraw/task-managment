@@ -1,11 +1,11 @@
 {
-  "name": "stream-helper",
+  "name": "task-managment",
   "version": "0.0.1",
   "private": true,
   "main": "public/electron.js",
   "build": {
-    "appId": "com.marckraw.stream-helper",
-    "productName": "Stream Helper",
+    "appId": "com.marckraw.task-managment",
+    "productName": "Task Managment",
     "files": [
       "public/**/*",
       "build/**/*",
