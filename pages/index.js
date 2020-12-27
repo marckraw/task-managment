@@ -1,78 +1,37 @@
-import { useContext, useEffect, useState } from 'react';
 import Head from 'next/head';
-import { OBSContext } from '../contexts/OBSContext';
-import Btn from '../components/Btn';
-import StartUp from '../components/StartUp';
 
 const Home = () => {
-  const { obsMethods } = useContext(OBSContext);
-  const [allScenesList, setAllScenesList] = useState([]);
-  const [currentSceneSources, setCurrentSceneSources] = useState([]);
-  const [currentScene, setCurrentScene] = useState('Main Scene');
-
-  useEffect(() => {
-    obsMethods.onObsError(err => {
-      console.error('socket error (from AppWrapper):', err);
-    });
-  }, [])
-
-  useEffect(() => {
-      obsMethods.onSwitchScene((data) => {
-        setCurrentScene(data.sceneName)
-        setCurrentSceneSources(data.sources)
-      })()
-  }, [])
-
-  useEffect(() => {
-    const getScenes = async () => {
-      const temp = await obsMethods.getScenesList();
-      setAllScenesList(temp?.scenes)
-    }
-
-    getScenes()
-  }, [])
-
-  const changeScene = async (scene) => {
-    await obsMethods.changeScene(scene.name)
-  }
 
   return (
     <div className='container'>
       <Head>
-        <title>Steam Helper</title>
+        <title>Task Managment</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main>
-        <div>
-          <div>
-            <h2>Current scene: {currentScene}</h2>
+        <div className="max-w-md w-full lg:flex">
+          <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" title="Woman holding a mug">
           </div>
-          <ul>
-            {
-              allScenesList.map(scene => {
-                return (
-                  <li key={scene.name}>
-                    <Btn onClick={() => changeScene(scene)}>{scene.name}</Btn>
-                  </li>
-                )
-              })
-            }
-          </ul>
-
-          <h2>Current Scene Sources: </h2>
-          <br />
-          <ul>
-            {
-              currentSceneSources?.map(source => {
-                return (
-                  <li key={source.name}>
-                    {source.name}
-                  </li>
-                )
-              })
-            }
-          </ul>
+          <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div className="mb-8">
+              <p className="text-sm text-grey-dark flex items-center">
+                <svg className="text-grey w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+                </svg>
+                Members only
+              </p>
+              <div className="text-black font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+              <p className="text-grey-darker text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+            </div>
+            <div className="flex items-center">
+              <img className="w-10 h-10 rounded-full mr-4" src="https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg" alt="Avatar of Jonathan Reinink" />
+                <div className="text-sm">
+                  <p className="text-black leading-none">Jonathan Reinink</p>
+                  <p className="text-grey-dark">Aug 18</p>
+                </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -80,9 +39,5 @@ const Home = () => {
 }
 
 export default function AppWrapper() {
-  const { obs } = useContext(OBSContext);
-
-  return (
-    obs ? (<Home />) : <StartUp />
-  )
+  return <Home />
 }

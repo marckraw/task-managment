@@ -1,12 +1,13 @@
 {
   "name": "task-managment",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "private": true,
   "main": "public/electron.js",
   "build": {
     "appId": "com.marckraw.task-managment",
     "productName": "Task Managment",
     "files": [
+      "out/**/*",
       "public/**/*",
       "build/**/*",
       "build/icon.*",
@@ -23,12 +24,13 @@
   },
   "homepage": "./",
   "scripts": {
+    "build:for:electron": "next build && next export",
     "next-dev": "next dev",
     "next-build": "next build",
     "next-start": "next start",
     "electron-start": "electron .",
     "electron-build": "electron-builder",
-    "build-locally": "yarn && yarn run next-build && yarn run electron-build",
+    "build-locally": "yarn && yarn run build:for:electron && yarn run electron-build",
     "pack": "DEBUG=electron-builder electron-builder --dir",
     "build": "yarn run next-build",
     "release": "yarn run build",
@@ -53,7 +55,9 @@
     "wait-on": "^5.2.0"
   },
   "devDependencies": {
+    "@types/react": "^17.0.0",
     "electron": "^11.1.0",
-    "electron-builder": "^22.9.1"
+    "electron-builder": "^22.9.1",
+    "typescript": "^4.1.3"
   }
 }
