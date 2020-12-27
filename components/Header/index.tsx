@@ -1,3 +1,8 @@
+import Adjustments from "../Icons/Adjustments";
+import AdjustmentsOutline from "../Icons/AdjustmentsOutline";
+import Search from "../Icons/Search";
+import SearchOutline from "../Icons/SearchOutline";
+
 const Header = () => {
     return (
         <div className="bg-blue-100 max-w-full pb-2 pt-2">
@@ -6,8 +11,11 @@ const Header = () => {
                     <div>
                         <h1 className="uppercase">task managment app</h1>
                     </div>
-                    <div>
-                        <div className="bg-red-200 h-6 w-6" />
+                    <div className="flex">
+                        <Search className="w-6 h-6" />
+                        <SearchOutline className="w-6 h-6" />
+                        <AdjustmentsOutline className="w-6 h-6" />
+                        <Adjustments className="w-6 h-6" />
                     </div>
                 </div>
             </div>
