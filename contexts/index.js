@@ -1,9 +1,9 @@
-import OBSContextProvider from './OBSContext';
+import TaskContextProvider from "./TaskContext";
 
 const ContextWrapper = ({children}) => (
-    <OBSContextProvider>
+    <TaskContextProvider>
       {children}
-    </OBSContextProvider>
+    </TaskContextProvider>
 )
 
 export default ContextWrapper;
