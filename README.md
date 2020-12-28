@@ -3,7 +3,7 @@ Electron / Web App for managing personal/company tasks, with easy GitHub integra
 
 ## Development
 ```
-git clone git@github.com:marckraw/stream-helper.git
+git clone git@github.com:marckraw/task-managment.git
 ```
 Install dependencies
 
@@ -19,6 +19,7 @@ it will run `yarn run dev` - for next, and will run `electron .` for Electron.
 
 After a while `BrowserWindow` will be opened with NextJS hot reloaded app.
 
-## Websockets protocol documentation
-[obs-websocket Protocol](https://github.com/Palakis/obs-websocket/blob/4.x-current/docs/generated/protocol.md)
+## External stuff we are using here
+- icons pack made by creator of Tailwind: https://heroicons.com/
+- HTML to JSX converter - https://htmltojsx.happykit.dev/
 
