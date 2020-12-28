@@ -1,4 +1,5 @@
 import {useContext} from "react";
+import Link from 'next/link';
 import Adjustments from "../Icons/Adjustments";
 import AdjustmentsOutline from "../Icons/AdjustmentsOutline";
 import Search from "../Icons/Search";
@@ -24,6 +25,7 @@ const Header = () => {
                         <SearchOutline className="w-6 h-6" />
                         <AdjustmentsOutline className="w-6 h-6" />
                         <Adjustments className="w-6 h-6" />
+                        <Link href="/profile">Profile</Link>
                     </div>
                 </div>
             </div>

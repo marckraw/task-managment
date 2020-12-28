@@ -1,34 +1,23 @@
 import Head from 'next/head';
-import Header from "components/Header";
 import ColorPicker from "components/Forms/ColorPicker";
 import Progress from "components/Forms/Progress";
 import Meter from "components/Forms/Meter";
-import Link from "next/link";
+import Layout from "../components/Layout";
 
 const Home = () => {
 
   return (
-    <div>
-      <Head>
-        <title>Task Managment</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main>
-        <Header />
+    <Layout>
+        <Head>
+            <title>Task Managment - Main</title>
+            <link rel='icon' href='/favicon.ico' />
+        </Head>
         <div>
-            <Link href="/test/testPage">
-                <a>base!</a>
-            </Link>
-
-            <br /><br />
-
             <ColorPicker />
             <Progress />
             <Meter />
         </div>
-      </main>
-    </div>
+    </Layout>
   );
 }
 
