@@ -2,6 +2,8 @@ import Adjustments from "../Icons/Adjustments";
 import AdjustmentsOutline from "../Icons/AdjustmentsOutline";
 import Search from "../Icons/Search";
 import SearchOutline from "../Icons/SearchOutline";
+import PlusOutline from "../Icons/PlusOutline";
+import Plus from "../Icons/Plus";
 
 const Header = () => {
     return (
@@ -12,6 +14,8 @@ const Header = () => {
                         <h1 className="uppercase">task managment app</h1>
                     </div>
                     <div className="flex">
+                        <PlusOutline className="w-6 h-6" />
+                        <Plus className="w-6 h-6" />
                         <Search className="w-6 h-6" />
                         <SearchOutline className="w-6 h-6" />
                         <AdjustmentsOutline className="w-6 h-6" />
