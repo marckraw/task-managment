@@ -1,19 +1,14 @@
 import Head from 'next/head';
-import Header from "components/Header";
+import Layout from "../components/Layout";
 
 const Home = () => {
-
   return (
-    <div>
-      <Head>
-        <title>Task Managment</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main>
-        <Header />
-      </main>
-    </div>
+    <Layout>
+        <Head>
+            <title>Task Managment - Main</title>
+            <link rel='icon' href='/favicon.ico' />
+        </Head>
+    </Layout>
   );
 }
 
